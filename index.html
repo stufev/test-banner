@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <title>Рекламный баннер</title>
+    <meta charset="utf-8" />
+    <meta name="keywords" content="Greensock" />
+    <meta name="author" content="Made with ❤ by SH" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="format-detection"
+      content="telephone=no,date=no,address=no,email=no,url=no"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <style type="text/css" dev>
+      #link,
+      #container {
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+      }
+      #container {
+        margin-top: 50px;
+      }
+      body {
+        background-color: #ccc;
+      }
+    </style>
+    <link rel="stylesheet" type="text/css" href="fonts.css" inline />
+    <style type="text/css" inline>
+      html {
+        width: 100%;
+        height: 100%;
+        box-sizing: border-box;
+        /* backface-visibility: hidden; */
+      }
+      *,
+      *::before,
+      *::after {
+        box-sizing: inherit;
+        /* backface-visibility: inherit; */
+      }
+      body {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        user-select: none;
+        margin: 0;
+        padding: 0;
+        text-size-adjust: 100%;
+        -moz-user-select: none;
+        -webkit-user-select: none;
+        overscroll-behavior: none;
+        touch-action: manipulation;
+        -webkit-overflow-scrolling: touch;
+        -webkit-font-smoothing: antialiased;
+        -webkit-tap-highlight-color: transparent;
+      }
+      div,
+      img,
+      svg,
+      a {
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+      }
+      img {
+        border: 0;
+      }
+      a {
+        pointer-events: auto;
+        text-decoration: none;
+        color: black;
+      }
+      ._i {
+        position: relative;
+        display: inline-block;
+      }
+
+      /* ========== */
+      #container,
+      #link {
+        width: 240px;
+        height: 400px;
+      }
+
+      #container {
+        position: relative;
+        pointer-events: none;
+        overflow: hidden;
+        transform: perspective(1400px)
+          matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1);
+        /* transform-style: preserve-3d; */
+        background-color: #fff;
+        font-size: 0;
+      }
+      #overlay {
+        width: 100%;
+        height: 100%;
+        border: 1px solid #808080;
+        pointer-events: none;
+        z-index: 1000;
+      }
+      /*  */
+
+      .frame1,
+      .frame2,
+      .frame3 {
+        width: 100%;
+        height: 100%;
+      }
+
+      #text {
+        top: 12px;
+        left: 16px;
+        font-size: 23px;
+        font-family: "Verdana_Bold";
+        line-height: 1.13em;
+        letter-spacing: -0.06em;
+      }
+
+      #books1 {
+        width: 141px;
+        height: auto;
+        left: 78px;
+        top: 116px;
+      }
+
+      #books2 {
+        width: 114px;
+        height: auto;
+        left: 41px;
+        top: 174px;
+      }
+
+      #books3 {
+        width: 99px;
+        height: auto;
+        left: 21px;
+        top: 212px;
+      }
+
+      #logo {
+        width: 84px;
+        height: auto;
+        left: auto;
+        top: auto;
+        right: 15px;
+        bottom: 18px;
+      }
+
+      #cupboard {
+        width: 68px;
+        height: auto;
+        top: 90px;
+        left: 86px;
+      }
+
+      #text1 {
+        left: 23px;
+        width: 83px;
+      }
+
+      #text__suptitle {
+        font-size: 15px;
+        font-family: "Verdana_Bold";
+        line-height: 1.73em;
+        letter-spacing: -0.06em;
+        top: 15px;
+      }
+
+      #text__content {
+        font-size: 11px;
+        font-family: "Verdana_Regular";
+        line-height: 1.27em;
+        top: 37px;
+      }
+
+      #text__subtitle {
+        font-family: "Verdana_Bold";
+        font-size: 23px;
+        line-height: 0.97em;
+        letter-spacing: -0.06em;
+        top: 51px;
+      }
+
+      #text2 {
+        font-family: "Verdana_Bold";
+        font-size: 33px;
+        line-height: 1.03em;
+        top: 12px;
+        left: 38px;
+      }
+
+      #button {
+        font-family: "Verdana_Bold";
+        font-size: 27px;
+        line-height: 1.22em;
+        top: 188px;
+        left: 38px;
+        width: 174px;
+        height: 1.74em;
+        pointer-events: auto;
+        padding: 0.14em 0.88em;
+        border: 3px solid #0051ba;
+        border-radius: 14px;
+        overflow: hidden;
+        will-change: transform;
+      }
+
+      #button:hover {
+        color: #0051ba;
+        background-color: #ffdd00;
+      }
+
+      #flare {
+        width: 79px;
+        height: 50px;
+        background-color: #ffdd00;
+        top: 0;
+        left: 0;
+        overflow: hidden;
+      }
+
+      #button__logo {
+        top: 5px;
+        left: 23px;
+      }
+
+      #legal {
+        font-family: "Verdana_Regular";
+        font-size: 7px;
+        color: #545455;
+        left: 3px;
+        top: 394px;
+        width: 255px;
+        line-height: 1.14em;
+        transform: rotate(-90deg);
+        transform-origin: top left;
+      }
+    </style>
+  </head>
+
+  <body>
+    <a href="#" id="link" target="_blank">
+      <div id="container" style="opacity: 0">
+        <img id="logo" src="./assets/logo.svg" inline />
+
+        <div class="frame1">
+          <div id="text">Чего стоит<br />сохранить покой<br />в доме?</div>
+          <div id="books">
+            <img id="books3" src="./assets/books3.png" />
+            <img id="books2" src="./assets/books2.png" />
+            <img id="books1" src="./assets/books1.png" />
+          </div>
+        </div>
+
+        <div class="frame2">
+          <img id="cupboard" src="./assets/cupboard.png" />
+          <div id="text1">
+            <div id="text__suptitle">ХЕМНЭС</div>
+            <div id="text__content">стеллаж</div>
+            <div id="text__subtitle">6499.-</div>
+          </div>
+        </div>
+
+        <div class="frame3">
+          <div id="text2">Узнайте<br />цену<br />покоя</div>
+          <div id="button">
+            <div id="flare"></div>
+            <div id="button__logo">IKEA.ru</div>
+          </div>
+          <div id="legal">
+            © Inter IKEA Systems B.V.2018. ООО «ИКЕА ДОМ», Московская обл.,<br />
+            г. Химки, мкр-н ИКЕА, корп. 1, ОГРН 1065047056348.
+          </div>
+        </div>
+
+        <div id="overlay"></div>
+      </div>
+    </a>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
+    <script src="animation.js" inline></script>
+  </body>
+</html>
